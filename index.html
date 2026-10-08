@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Başkent Lefkoşa Taksi | Nicosia Taxi</title>
+<meta name="description" content="Başkent Lefkoşa Taksi - 7/24 taxi, Ercan Airport transfers, hotel transfers and private transportation in Nicosia.">
+<style>
+:root{--yellow:#f4c400;--black:#080a0c;--dark:#0d1012;--card:#171b1f;--muted:#aeb4b9;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:#fff;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:auto;padding:0 22px}
+header{position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(8,10,12,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:18px;font-weight:900;letter-spacing:.5px}.logo span{color:var(--yellow)}
+.navlinks{display:flex;align-items:center;gap:23px;font-size:14px;color:#ddd}
+.navlinks a:hover{color:var(--yellow)}
+.lang{border:1px solid var(--yellow);color:var(--yellow);background:transparent;border-radius:9px;padding:7px 11px;font-weight:800;cursor:pointer}
+.hero{min-height:100vh;padding:115px 0 55px;background:radial-gradient(circle at 80% 30%,rgba(244,196,0,.10),transparent 35%),var(--black)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:55px;min-height:calc(100vh - 170px)}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(244,196,0,.35);background:rgba(244,196,0,.08);border-radius:999px;color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:1.3px}
+h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:20px 0 22px;letter-spacing:-2px}h1 span{color:var(--yellow)}
+.hero p{font-size:18px;color:var(--muted);max-width:590px;margin-bottom:30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:54px;padding:0 22px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;transition:.2s;border:1px solid transparent}.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--yellow);color:#101010}.secondary{background:#171b1f;border-color:var(--line)}
+.hero-photo{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 80px rgba(0,0,0,.45);background:#111}
+.hero-photo img{display:block;width:100%;height:650px;object-fit:cover;object-position:center 48%}
+.photo-label{position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,.72);font-size:13px;font-weight:800}
+section{padding:92px 0}.dark{background:var(--dark)}
+.section-head{text-align:center;margin-bottom:48px}.kicker{color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.section-head h2{font-size:40px;line-height:1.1;margin:8px 0 12px}.section-head p{color:var(--muted);max-width:650px;margin:auto}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:.2s}.card:hover{border-color:rgba(244,196,0,.55);transform:translateY(-3px)}
+.icon{font-size:32px;margin-bottom:14px}.card h3{font-size:19px;margin-bottom:7px}.card p{font-size:14px;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.why-box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.why-item{display:flex;gap:15px;margin-bottom:25px}.why-item:last-child{margin-bottom:0}.check{width:38px;height:38px;flex:none;border-radius:50%;background:var(--yellow);color:#111;display:grid;place-items:center;font-weight:900}.why-item h3{margin-bottom:3px}.why-item p{color:var(--muted);font-size:14px}
+.cta{background:linear-gradient(135deg,#f4c400,#ffd83d);color:#111;text-align:center}.cta h2{font-size:clamp(32px,5vw,52px);line-height:1.05;margin-bottom:12px}.cta p{margin-bottom:24px}.cta .secondary{background:#111;color:#fff;border-color:#111}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.contact-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}.contact-card h3{margin-bottom:7px}.number{display:block;color:var(--yellow);font-size:24px;font-weight:900;margin-bottom:18px}
+.links{display:flex;flex-wrap:wrap;gap:10px}.mini{padding:11px 15px;border-radius:10px;background:#20252a;font-size:13px;font-weight:800}
+footer{padding:30px 0;color:#777;text-align:center;font-size:13px;border-top:1px solid var(--line)}
+.float{position:fixed;right:18px;bottom:18px;z-index:40;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:29px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+@media(max-width:850px){.nav{height:62px}.navlinks{gap:7px;font-size:0}.navlinks a{display:none}.lang{font-size:12px}.hero{padding-top:90px}.hero-grid{grid-template-columns:1fr;gap:28px;min-height:auto}h1{font-size:48px;letter-spacing:-1.4px}.hero p{font-size:16px}.hero-photo img{height:500px}.actions{flex-direction:column}.btn{width:100%}.services{grid-template-columns:1fr 1fr}.why-grid,.contact-grid{grid-template-columns:1fr}.section-head h2{font-size:32px}section{padding:70px 0}}
+@media(max-width:520px){.services{grid-template-columns:1fr}.hero-photo img{height:470px}.container{padding:0 17px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#">BAŞKENT <span>LEFKOŞA TAKSİ</span></a>
+<nav class="navlinks">
+<a href="#hizmetler" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+<a href="#neden" data-tr="Neden Biz?" data-en="Why Us?">Neden Biz?</a>
+<a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
+<button class="lang" id="langBtn" onclick="toggleLanguage()">EN</button>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow" id="eyebrow">🚕 7/24 TAKSİ & TRANSFER</div>
+<h1 id="heroTitle">Lefkoşa'da <span>güvenli</span>, hızlı ve konforlu ulaşım.</h1>
+<p id="heroText">Şehir içi taksi, Ercan Havalimanı, otel transferleri ve özel ulaşım. Konumunuzu WhatsApp'tan gönderin, size ulaşalım.</p>
+<div class="actions">
+<a class="btn primary" id="waHero" target="_blank">💬 <span id="waHeroText">WhatsApp'tan Taksi Çağır</span></a>
+<a class="btn secondary" href="tel:+905488251919">📞 +90 548 825 19 19</a>
+</div>
+</div>
+<div class="hero-photo">
+<img src="mercedes-w212.jpg" alt="Başkent Lefkoşa Taksi Mercedes W212">
+<div class="photo-label" id="photoLabel">⭐ Mercedes W212 • Başkent Lefkoşa Taksi</div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="hizmetler">
+<div class="container">
+<div class="section-head">
+<div class="kicker" id="servicesKicker">Hizmetlerimiz</div>
+<h2 id="servicesTitle">İhtiyacınız olan ulaşım</h2>
+<p id="servicesIntro">Lefkoşa ve çevresinde günlük yolculuklardan havalimanı transferlerine kadar.</p>
+</div>
+<div class="services">
+<div class="card"><div class="icon">🚕</div><h3 data-tr="Şehir İçi Taksi" data-en="City Taxi">Şehir İçi Taksi</h3><p data-tr="Lefkoşa'nın her noktasına hızlı ve güvenli ulaşım." data-en="Fast and safe transportation anywhere in Nicosia.">Lefkoşa'nın her noktasına hızlı ve güvenli ulaşım.</p></div>
+<div class="card"><div class="icon">✈️</div><h3 data-tr="Ercan Havalimanı" data-en="Ercan Airport">Ercan Havalimanı</h3><p data-tr="Havalimanına ve havalimanından konforlu transfer." data-en="Comfortable transfers to and from Ercan Airport.">Havalimanına ve havalimanından konforlu transfer.</p></div>
+<div class="card"><div class="icon">🏨</div><h3 data-tr="Otel Transferi" data-en="Hotel Transfer">Otel Transferi</h3><p data-tr="Otelinizden istediğiniz noktaya özel ulaşım." data-en="Private transportation from your hotel to your destination.">Otelinizden istediğiniz noktaya özel ulaşım.</p></div>
+<div class="card"><div class="icon">🎓</div><h3 data-tr="Öğrenci Ulaşımı" data-en="Student Transportation">Öğrenci Ulaşımı</h3><p data-tr="Öğrenciler için pratik ve güvenilir taksi hizmeti." data-en="Practical and reliable taxi service for students.">Öğrenciler için pratik ve güvenilir taksi hizmeti.</p></div>
+<div class="card"><div class="icon">🌙</div><h3 data-tr="Gece Ulaşımı" data-en="Night Transportation">Gece Ulaşımı</h3><p data-tr="Gece, bar ve meyhane dönüşlerinde güvenli ulaşım." data-en="Safe transportation at night, including bar and restaurant returns.">Gece, bar ve meyhane dönüşlerinde güvenli ulaşım.</p></div>
+<div class="card"><div class="icon">🗺️</div><h3 data-tr="Özel Transfer & Tur" data-en="Private Transfer & Tours">Özel Transfer & Tur</h3><p data-tr="Günlük tur ve kişiye özel transfer seçenekleri." data-en="Daily tours and private transfer options.">Günlük tur ve kişiye özel transfer seçenekleri.</p></div>
+</div>
+</div>
+</section>
+
+<section id="neden">
+<div class="container">
+<div class="section-head">
+<div class="kicker" id="whyKicker">Başkent Lefkoşa Taksi</div>
+<h2 id="whyTitle">Neden bizi tercih etmelisiniz?</h2>
+<p id="whyIntro">Amacımız müşteriyi hızlıca taksiye ulaştırmak ve rahat bir yolculuk sunmak.</p>
+</div>
+<div class="why-grid">
+<div class="why-box">
+<div class="why-item"><div class="check">✓</div><div><h3 data-tr="7/24 Ulaşılabilir" data-en="Available 24/7">7/24 Ulaşılabilir</h3><p data-tr="Telefon veya WhatsApp üzerinden günün her saatinde ulaşabilirsiniz." data-en="Reach us anytime by phone or WhatsApp.">Telefon veya WhatsApp üzerinden günün her saatinde ulaşabilirsiniz.</p></div></div>
+<div class="why-item"><div class="check">✓</div><div><h3 data-tr="Konforlu Araç" data-en="Comfortable Vehicle">Konforlu Araç</h3><p data-tr="Mercedes W212 ile konforlu ve keyifli yolculuk." data-en="Enjoy a comfortable ride in our Mercedes W212.">Mercedes W212 ile konforlu ve keyifli yolculuk.</p></div></div>
+<div class="why-item"><div class="check">✓</div><div><h3 data-tr="WhatsApp ile Kolay Çağrı" data-en="Easy WhatsApp Booking">WhatsApp ile Kolay Çağrı</h3><p data-tr="Butona basın, konumunuzu gönderin; gerisini biz halledelim." data-en="Tap the button, send your location, and we will take care of the rest.">Butona basın, konumunuzu gönderin; gerisini biz halledelim.</p></div></div>
+</div>
+<div class="why-box">
+<h2 id="whyBoxTitle" style="font-size:34px;margin-bottom:12px">Taksi çağırmak sadece bir dokunuş.</h2>
+<p id="whyBoxText" style="color:var(--muted);margin-bottom:22px">Google'dan siteye gelen müşterinin doğrudan WhatsApp'a veya telefona ulaşabileceği şekilde tasarlandı.</p>
+<a class="btn primary" id="waWhy" target="_blank">💬 <span id="waWhyText">WhatsApp'tan Taksi Çağır</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2 id="ctaTitle">Taksiye mi ihtiyacınız var?</h2>
+<p id="ctaText">Konumunuzu gönderin, size ulaşalım.</p>
+<div class="actions" style="justify-content:center">
+<a class="btn secondary" id="waCta" target="_blank">💬 <span id="waCtaText">WhatsApp'tan Çağır</span></a>
+<a class="btn secondary" href="tel:+905488251919">📞 Hemen Ara</a>
+</div>
+</div>
+</section>
+
+<section class="dark" id="iletisim">
+<div class="container">
+<div class="section-head">
+<div class="kicker" id="contactKicker">İletişim</div>
+<h2 id="contactTitle">Bize ulaşın</h2>
+</div>
+<div class="contact-grid">
+<div class="contact-card">
+<h3 id="taxiTitle">🚕 Taksi</h3>
+<a class="number" href="tel:+905488251919">+90 548 825 19 19</a>
+<div class="links"><a class="mini" target="_blank" href="https://wa.me/905488251919">WhatsApp</a><a class="mini" href="tel:+905488251919" id="callTaxi">Ara</a></div>
+</div>
+<div class="contact-card">
+<h3 id="transferTitle">✈️ Transfer</h3>
+<a class="number" href="tel:+905391179212">+90 539 117 92 12</a>
+<div class="links"><a class="mini" href="tel:+905391179212" id="callTransfer">Transferi Ara</a><a class="mini" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Başkent+Lefkoşa+Taksi">📍 Google Maps</a></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer id="footer">© 2026 Başkent Lefkoşa Taksi • Lefkoşa • Ercan Havalimanı • Kuzey Kıbrıs</footer>
+<a class="float" id="waFloat" target="_blank" aria-label="WhatsApp">💬</a>
+
+<script>
+let lang="tr";
+const wa="https://wa.me/905488251919?text=Merhaba%2C%20taksi%20%C3%A7a%C4%9F%C4%B1rmak%20istiyorum.%20Bulundu%C4%9Fum%20yer%3A%20";
+const text={
+tr:{
+eyebrow:"🚕 7/24 TAKSİ & TRANSFER",
+heroTitle:"Lefkoşa'da <span>güvenli</span>, hızlı ve konforlu ulaşım.",
+heroText:"Şehir içi taksi, Ercan Havalimanı, otel transferleri ve özel ulaşım. Konumunuzu WhatsApp'tan gönderin, size ulaşalım.",
+wa:"WhatsApp'tan Taksi Çağır",photo:"⭐ Mercedes W212 • Başkent Lefkoşa Taksi",
+servicesKicker:"Hizmetlerimiz",servicesTitle:"İhtiyacınız olan ulaşım",servicesIntro:"Lefkoşa ve çevresinde günlük yolculuklardan havalimanı transferlerine kadar.",
+whyKicker:"Başkent Lefkoşa Taksi",whyTitle:"Neden bizi tercih etmelisiniz?",whyIntro:"Amacımız müşteriyi hızlıca taksiye ulaştırmak ve rahat bir yolculuk sunmak.",
+whyBoxTitle:"Taksi çağırmak sadece bir dokunuş.",whyBoxText:"Google'dan siteye gelen müşterinin doğrudan WhatsApp'a veya telefona ulaşabileceği şekilde tasarlandı.",
+ctaTitle:"Taksiye mi ihtiyacınız var?",ctaText:"Konumunuzu gönderin, size ulaşalım.",
+contactKicker:"İletişim",contactTitle:"Bize ulaşın",taxiTitle:"🚕 Taksi",transferTitle:"✈️ Transfer",callTaxi:"Ara",callTransfer:"Transferi Ara",footer:"© 2026 Başkent Lefkoşa Taksi • Lefkoşa • Ercan Havalimanı • Kuzey Kıbrıs"
+},
+en:{
+eyebrow:"🚕 24/7 TAXI & TRANSFER",
+heroTitle:"Safe, fast and comfortable <span>transportation</span> in Nicosia.",
+heroText:"City taxi, Ercan Airport transfers, hotel transfers and private transportation. Send us your location on WhatsApp and we will come to you.",
+wa:"Book a Taxi on WhatsApp",photo:"⭐ Mercedes W212 • Başkent Lefkoşa Taksi",
+servicesKicker:"Our Services",servicesTitle:"Transportation for your needs",servicesIntro:"From everyday rides in Nicosia to airport transfers and private trips.",
+whyKicker:"Başkent Lefkoşa Taxi",whyTitle:"Why choose us?",whyIntro:"Our goal is to get you a taxi quickly and provide a comfortable journey.",
+whyBoxTitle:"Booking a taxi is just one tap away.",whyBoxText:"Designed so customers coming from Google can reach us directly through WhatsApp or phone.",
+ctaTitle:"Need a taxi?",ctaText:"Send us your location and we will come to you.",
+contactKicker:"Contact",contactTitle:"Get in touch",taxiTitle:"🚕 Taxi",transferTitle:"✈️ Transfer",callTaxi:"Call",callTransfer:"Call Transfer",footer:"© 2026 Başkent Lefkoşa Taxi • Nicosia • Ercan Airport • Northern Cyprus"
+}};
+function set(id,value){document.getElementById(id).innerHTML=value}
+function update(){
+const t=text[lang];
+Object.keys(t).forEach(k=>{if(document.getElementById(k))set(k,t[k])});
+document.querySelectorAll("[data-tr]").forEach(e=>e.textContent=e.dataset[lang]);
+document.getElementById("langBtn").textContent=lang==="tr"?"EN":"TR";
+document.documentElement.lang=lang;
+document.getElementById("waHero").href=wa;
+document.getElementById("waWhy").href=wa;
+document.getElementById("waCta").href=wa;
+document.getElementById("waFloat").href=wa;
+document.getElementById("waHeroText").textContent=t.wa;
+document.getElementById("waWhyText").textContent=t.wa;
+document.getElementById("waCtaText").textContent=lang==="tr"?"WhatsApp'tan Çağır":"Book on WhatsApp";
+}
+function toggleLanguage(){lang=lang==="tr"?"en":"tr";update()}
+update();
+</script>
+</body>
+</html>
